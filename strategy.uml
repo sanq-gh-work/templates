@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>sanq.example.templates.strategy</OriginalElement>
+  <nodes>
+    <node x="409.0" y="147.0">sanq.example.templates.strategy.QuackMute</node>
+    <node x="260.0" y="240.0">sanq.example.templates.strategy.FlyBehavior</node>
+    <node x="260.0" y="338.0">sanq.example.templates.strategy.FlyNoWay</node>
+    <node x="275.0" y="49.0">sanq.example.templates.strategy.QuackBehavior</node>
+    <node x="-214.0" y="49.0">sanq.example.templates.strategy.DuckSimulator</node>
+    <node x="-233.0" y="116.0">sanq.example.templates.strategy.Duck</node>
+    <node x="378.0" y="338.0">sanq.example.templates.strategy.FlyRocketPowered</node>
+    <node x="275.0" y="147.0">sanq.example.templates.strategy.QuackSqueack</node>
+    <node x="141.0" y="338.0">sanq.example.templates.strategy.FlyWithWings</node>
+    <node x="-120.0" y="336.0">sanq.example.templates.strategy.MallardDuck</node>
+    <node x="-277.0" y="336.0">sanq.example.templates.strategy.ModelDuck</node>
+    <node x="141.0" y="147.0">sanq.example.templates.strategy.Quack</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="sanq.example.templates.strategy.QuackSqueack" target="sanq.example.templates.strategy.QuackBehavior">
+      <point x="0.0" y="-24.0" />
+      <point x="0.0" y="24.0" />
+    </edge>
+    <edge source="sanq.example.templates.strategy.FlyWithWings" target="sanq.example.templates.strategy.FlyBehavior">
+      <point x="0.0" y="-24.0" />
+      <point x="190.5" y="313.0" />
+      <point x="276.33333333333337" y="313.0" />
+      <point x="-32.66666666666666" y="24.0" />
+    </edge>
+    <edge source="sanq.example.templates.strategy.FlyNoWay" target="sanq.example.templates.strategy.FlyBehavior">
+      <point x="0.0" y="-24.0" />
+      <point x="0.0" y="24.0" />
+    </edge>
+    <edge source="sanq.example.templates.strategy.QuackMute" target="sanq.example.templates.strategy.QuackBehavior">
+      <point x="0.0" y="-24.0" />
+      <point x="466.0" y="122.0" />
+      <point x="370.0" y="122.0" />
+      <point x="38.0" y="24.0" />
+    </edge>
+    <edge source="sanq.example.templates.strategy.ModelDuck" target="sanq.example.templates.strategy.Duck">
+      <point x="0.0" y="-34.5" />
+      <point x="-208.5" y="311.0" />
+      <point x="-180.75" y="311.0" />
+      <point x="-52.25" y="85.0" />
+    </edge>
+    <edge source="sanq.example.templates.strategy.FlyRocketPowered" target="sanq.example.templates.strategy.FlyBehavior">
+      <point x="0.0" y="-24.0" />
+      <point x="439.5" y="313.0" />
+      <point x="341.66666666666663" y="313.0" />
+      <point x="32.66666666666666" y="24.0" />
+    </edge>
+    <edge source="sanq.example.templates.strategy.Quack" target="sanq.example.templates.strategy.QuackBehavior">
+      <point x="0.0" y="-24.0" />
+      <point x="198.0" y="122.0" />
+      <point x="294.0" y="122.0" />
+      <point x="-38.0" y="24.0" />
+    </edge>
+    <edge source="sanq.example.templates.strategy.MallardDuck" target="sanq.example.templates.strategy.Duck">
+      <point x="0.0" y="-34.5" />
+      <point x="-48.5" y="311.0" />
+      <point x="-76.25" y="311.0" />
+      <point x="52.25" y="85.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="173.0" y="384.0" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
