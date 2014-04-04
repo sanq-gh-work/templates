@@ -11,14 +11,13 @@ import java.awt.event.ActionListener;
  * Date: 03.04.14
  * Time: 11:31
  */
-public class DJView implements ActionListener, BeatObserver, BPMObserver {
-    BeatModelInterface model;
-    ControllerInterface controller;
+
+public class View implements ActionListener, IBeatObserver, IBPMObserver {
+    IBeatModel model;
+    IController controller;
     JFrame viewFrame;
     JPanel viewPanel;
-
     BeatBar beatBar;
-
     JLabel bpmOutputLabel;
     JPanel controlPanel;
     JFrame controlFrame;
@@ -32,11 +31,11 @@ public class DJView implements ActionListener, BeatObserver, BPMObserver {
     JMenuItem startMenuItem;
     JMenuItem stopMenuItem;
 
-    public DJView(BeatModelInterface model, ControllerInterface controller) {
+    public View(IBeatModel model, IController controller) {
         this.model = model;
         this.controller = controller;
-        model.registerObserver((BeatObserver) this);
-        model.registerObserver((BPMObserver) this);
+        model.registerObserver((IBeatObserver) this);
+        model.registerObserver((IBPMObserver) this);
     }
 
     public void createView() {

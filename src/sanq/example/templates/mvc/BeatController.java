@@ -6,13 +6,13 @@ package sanq.example.templates.mvc;
  * Date: 04.04.14
  * Time: 9:03
  */
-public class BeatController implements ControllerInterface {
-    BeatModelInterface model;
-    DJView view;
+public class BeatController implements IController {
+    IBeatModel model;
+    View view;
 
-    public BeatController(BeatModelInterface model) {
+    public BeatController(IBeatModel model) {
         this.model = model;
-        view = new DJView(model,this);
+        view = new View(model,this);
         view.createView();
         view.createControls();
         view.disableStopMenuItem();

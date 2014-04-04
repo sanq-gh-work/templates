@@ -6,7 +6,8 @@ package sanq.example.templates.mvc;
  * Date: 03.04.14
  * Time: 11:34
  */
-public interface ControllerInterface {
+public interface IController
+{
 
     void start();
     void stop();

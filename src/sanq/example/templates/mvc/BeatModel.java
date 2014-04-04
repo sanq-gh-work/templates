@@ -11,12 +11,12 @@ import java.util.List;
  * Time: 10:09
  */
 
-public class BeatModel implements BeatModelInterface, MetaEventListener {
+public class BeatModel implements IBeatModel, MetaEventListener {
     Sequencer sequencer;
     Sequence sequence;
 
-    List<BeatObserver> beatObservers = new ArrayList<>();
-    List<BPMObserver> bpmObservers = new ArrayList<>();
+    List<IBeatObserver> beatObservers = new ArrayList<>();
+    List<IBPMObserver> bpmObservers = new ArrayList<>();
     int bpm = 0;
     Track track;
 
@@ -56,33 +56,33 @@ public class BeatModel implements BeatModelInterface, MetaEventListener {
 
 
     @Override
-    public void registerObserver(BeatObserver o) {
+    public void registerObserver(IBeatObserver o) {
         beatObservers.add(o);
     }
 
     @Override
-    public void removeObserver(BeatObserver o) {
+    public void removeObserver(IBeatObserver o) {
         beatObservers.remove(o);
     }
 
     void notifyBeatObservers() {
-        for (BeatObserver beatObs : beatObservers) {
+        for (IBeatObserver beatObs : beatObservers) {
             beatObs.updateBeat();
         }
     }
 
     @Override
-    public void registerObserver(BPMObserver o) {
+    public void registerObserver(IBPMObserver o) {
         bpmObservers.add(o);
     }
 
     @Override
-    public void removeObserver(BPMObserver o) {
+    public void removeObserver(IBPMObserver o) {
         bpmObservers.remove(o);
     }
 
     void notifyBPMObservers() {
-        for (BPMObserver bpmObs : bpmObservers) {
+        for (IBPMObserver bpmObs : bpmObservers) {
             bpmObs.updateBPM();
         }
     }

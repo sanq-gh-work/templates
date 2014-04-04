@@ -9,8 +9,8 @@ package sanq.example.templates.mvc;
 public class Launcher {
     public static void main(String[] args) {
 
-        BeatModelInterface model = new BeatModel();
-        ControllerInterface controller = new BeatController(model);
+        IBeatModel model = new BeatModel();
+        IController controller = new BeatController(model);
     }
 
 }

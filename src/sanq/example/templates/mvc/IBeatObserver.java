@@ -6,6 +6,6 @@ package sanq.example.templates.mvc;
  * Date: 03.04.14
  * Time: 10:29
  */
-public interface BPMObserver {
-    void updateBPM();
+public interface IBeatObserver {
+    void updateBeat();
 }
