@@ -7,10 +7,10 @@ package sanq.example.templates.mvc;
  * Time: 10:05
  */
 public interface BeatModelInterface {
-    void initialise();
+    void initialize();
     void on();
     void off();
-    void setBMP(int bpm);
+    void setBPM(int bpm);
     int getBPM();
     void registerObserver(BeatObserver o);
     void removeObserver(BeatObserver o);

@@ -39,7 +39,6 @@ public class DJView implements ActionListener, BeatObserver, BPMObserver {
         model.registerObserver((BPMObserver) this);
     }
 
-
     public void createView() {
         viewPanel = new JPanel(new GridLayout(1, 2));
         viewFrame = new JFrame("View");
@@ -53,8 +52,9 @@ public class DJView implements ActionListener, BeatObserver, BPMObserver {
         bpmPanel.add(bpmOutputLabel);
         viewPanel.add(bpmPanel);
         viewFrame.getContentPane().add(viewPanel, BorderLayout.CENTER);
+        viewFrame.pack();
+        viewFrame.setVisible(true);
     }
-
 
     public void createControls() {
         JFrame.setDefaultLookAndFeelDecorated(true);
@@ -95,7 +95,6 @@ public class DJView implements ActionListener, BeatObserver, BPMObserver {
         menuBar.add(menu);
         controlFrame.setJMenuBar(menuBar);
 
-
         bpmTextField = new JTextField(2);
         bpmLabel = new JLabel("Enter BPM:", SwingConstants.RIGHT);
 
@@ -124,11 +123,10 @@ public class DJView implements ActionListener, BeatObserver, BPMObserver {
         insideControlPanel.add(buttonPanel);
         controlPanel.add(insideControlPanel);
 
-
         bpmLabel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
         bpmOutputLabel.setBorder(BorderFactory.createEmptyBorder(5, 5, 5, 5));
         controlFrame.getRootPane().setDefaultButton(setBpmButton);
-        controlFrame.getContentPane().add(controlFrame, BorderLayout.CENTER);
+        controlFrame.getContentPane().add(controlPanel, BorderLayout.CENTER);
 
         controlFrame.pack();
         controlFrame.setVisible(true);
@@ -139,7 +137,7 @@ public class DJView implements ActionListener, BeatObserver, BPMObserver {
         stopMenuItem.setEnabled(true);
     }
 
-    public void disbleStopMenuItem() {
+    public void disableStopMenuItem() {
         stopMenuItem.setEnabled(false);
     }
 

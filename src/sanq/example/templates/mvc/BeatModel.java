@@ -10,6 +10,7 @@ import java.util.List;
  * Date: 03.04.14
  * Time: 10:09
  */
+
 public class BeatModel implements BeatModelInterface, MetaEventListener {
     Sequencer sequencer;
     Sequence sequence;
@@ -20,26 +21,25 @@ public class BeatModel implements BeatModelInterface, MetaEventListener {
     Track track;
 
     @Override
-    public void initialise() {
+    public void initialize() {
         setUpMidi();
         buildTrackAndStart();
     }
 
-
     @Override
     public void on() {
+        setBPM(90);
         sequencer.start();
-        setBMP(90);
     }
 
     @Override
     public void off() {
-        setBMP(0);
+        setBPM(0);
         sequencer.stop();
     }
 
     @Override
-    public void setBMP(int bpm) {
+    public void setBPM(int bpm) {
         this.bpm = bpm;
         sequencer.setTempoInBPM(getBPM());
         notifyBPMObservers();
@@ -93,7 +93,7 @@ public class BeatModel implements BeatModelInterface, MetaEventListener {
         if (meta.getType() == 47) {
             beatEvent();
             sequencer.start();
-            setBMP(getBPM());
+            setBPM(getBPM());
         }
     }
 
@@ -116,29 +116,22 @@ public class BeatModel implements BeatModelInterface, MetaEventListener {
         int[] trackList = {35, 0, 46, 0};
         sequence.deleteTrack(null);
         track = sequence.createTrack();
-        makeTrackcs(trackList);
+        makeTracks(trackList);
         track.add(makeEvent(192, 9, 1, 0, 4));
-
-
         try {
             sequencer.setSequence(sequence);
-
-
         } catch (InvalidMidiDataException e) {
             e.printStackTrace();
         }
-
     }
 
-    private void makeTrackcs(int[] trackList) {
+    private void makeTracks(int[] trackList) {
         for (int i = 0; i < trackList.length; i++) {
             if (trackList[i] != 0) {
                 track.add(makeEvent(144, 9, trackList[i], 100, i));
                 track.add(makeEvent(128, 9, trackList[i], 100, i + 1));
             }
         }
-
-
     }
 
     private MidiEvent makeEvent(int comd, int chan, int one, int two, int tick) {
@@ -152,6 +145,5 @@ public class BeatModel implements BeatModelInterface, MetaEventListener {
         }
         return midiEvent;
     }
-
 
 }
